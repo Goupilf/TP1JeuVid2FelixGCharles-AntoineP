@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private Transform camera;
+    [SerializeField] private Transform camera;
+
 
     private Vector3 direction;
     private float rotationTime = 0.1f;
