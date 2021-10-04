@@ -1229,7 +1229,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959273151}
-  m_LocalRotation: {x: 0.060895935, y: 0.784464, z: -0.07802794, w: 0.6122251}
+  m_LocalRotation: {x: 0.06089592, y: 0.784464, z: -0.078027934, w: 0.6122252}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 1032903425}
   speed: 30
+  speed: 5
   camera: {fileID: 282840814}
   telekinesis:
     m_PersistentCalls:
