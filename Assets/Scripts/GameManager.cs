@@ -16,4 +16,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void modifyLifeCounter(int nbOfLives)
+    {
+
+    }
 }

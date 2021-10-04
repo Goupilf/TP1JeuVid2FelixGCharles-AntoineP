@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private float rotationTime = 0.1f;
     private float rotationSpeed;
-    private bool isJumping;
 
     //On a très rarement une gravité réelle dans un jeu de plateforme, celle-ci donne un effet de "flottement"
     private float gravity = 30f;//9.81f;
