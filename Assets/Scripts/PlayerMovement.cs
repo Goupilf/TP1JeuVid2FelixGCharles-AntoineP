@@ -13,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private float rotationTime = 0.1f;
     private float rotationSpeed;
+    private bool isJumping;
 
     //On a très rarement une gravité réelle dans un jeu de plateforme, celle-ci donne un effet de "flottement"
     private float gravity = 30f;//9.81f;
-    private float jumpSpeed = 12f;//6f;
+    private float jumpSpeed = 18f;//6f;
     private float vecticalMovement = 0f;
-    private bool doubleJump = false;
 
     [SerializeField]
     private UnityEvent telekinesis;
@@ -90,22 +90,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void BuildVerticalMovement()
     {
-        //Décommenter pour avoir le double saut.
-        if (characterController.isGrounded) doubleJump = true;
-
         if (Input.GetButtonDown("Jump"))
         {
             if (characterController.isGrounded)
             {
                 vecticalMovement = jumpSpeed;
             }
-            else if (doubleJump)
-            {
-                vecticalMovement = jumpSpeed;
-                doubleJump = false;
-            }
         }
-
         vecticalMovement -= gravity * Time.deltaTime;
         direction.y = vecticalMovement * Time.deltaTime;
     }
