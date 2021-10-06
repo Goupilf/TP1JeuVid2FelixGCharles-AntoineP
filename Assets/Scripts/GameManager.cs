@@ -18,7 +18,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Debug.Log("Escape has been pressed");
+            Application.Quit();
+        }
     }
 
     public void modifyLifeCounter(int nbOfLivesRemaining)
