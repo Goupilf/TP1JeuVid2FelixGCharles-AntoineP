@@ -5,6 +5,8 @@ using UnityEngine;
 public class managePlayerLives : MonoBehaviour
 {
     [SerializeField] private int nbOfLives = 5;
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +19,15 @@ public class managePlayerLives : MonoBehaviour
         
     }
 
-    int getPlayerLiveCounter()
-    {
-        return nbOfLives;
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "alien")
         {
-            nbOfLives = nbOfLives - 1;
+            if(characterController.isGrounded)
+            {
+                nbOfLives = nbOfLives - 1;
+                gameManager.modifyLifeCounter(nbOfLives);
+            }
         }
     }
 }
