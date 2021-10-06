@@ -19,13 +19,15 @@ public class managePlayerLives : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnControllerColliderHit(ControllerColliderHit collision)
     {
         if(collision.gameObject.tag == "alien")
         {
-            if(characterController.isGrounded)
+            if (characterController.isGrounded)
             {
                 nbOfLives = nbOfLives - 1;
+                Debug.Log(nbOfLives);
+                Destroy(collision.gameObject);
                 gameManager.modifyLifeCounter(nbOfLives);
             }
         }
