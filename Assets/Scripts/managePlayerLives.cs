@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class managePlayerLives : MonoBehaviour
+public class ManagePlayerLives : MonoBehaviour
 {
     [SerializeField] private int nbOfLives = 5;
     [SerializeField] private CharacterController characterController;
