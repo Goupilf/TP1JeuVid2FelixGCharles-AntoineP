@@ -7,12 +7,11 @@ public class GameManager : MonoBehaviour
 {
     private string fixedText1 = "Lives: ";
     private int lives = 5;
-
     [SerializeField] Text uiLivesTexts;
     // Start is called before the first frame update
     void Start()
     {
-        uiLivesTexts.text = fixedText1 + lives;
+        uiLivesTexts.text = fixedText1 + lives;    
     }
 
     // Update is called once per frame
