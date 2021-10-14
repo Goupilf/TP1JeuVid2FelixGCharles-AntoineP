@@ -23,11 +23,11 @@ public class ManagePlayerLives : MonoBehaviour
     {
         if(collision.gameObject.tag == "alien")
         {
-            if (characterController.isGrounded)
+            Destroy(collision.gameObject);
+            if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y)
             {
                 nbOfLives = nbOfLives - 1;
                 Debug.Log(nbOfLives);
-                Destroy(collision.gameObject);
                 gameManager.modifyLifeCounter(nbOfLives);
             }
         }
