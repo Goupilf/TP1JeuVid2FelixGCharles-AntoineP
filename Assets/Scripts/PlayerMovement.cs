@@ -25,19 +25,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (gameObject.activeSelf)
         {
-            //Va appeller toutes les méthodes attachées à cet événement.
-            telekinesis.Invoke();
+            if (Input.GetButtonDown("Fire2"))
+            {
+                //Va appeller toutes les méthodes attachées à cet événement.
+                telekinesis.Invoke();
+            }
+
+            //On a droit à un seul move par framerate.  Bien que le déplacement et le saut n'ont rien à voir
+            //chaque partie doit "construire" le vector de direction à sa façon.  Avoir un move pour le saut et un autre pour le mouvement
+            //ferait en sorte que le joueur ne pourrait pas se déplacer et sauter en même temps.
+            BuildSurfaceMovement();
+            BuildVerticalMovement();
+
+            characterController.Move(direction);
         }
-
-        //On a droit à un seul move par framerate.  Bien que le déplacement et le saut n'ont rien à voir
-        //chaque partie doit "construire" le vector de direction à sa façon.  Avoir un move pour le saut et un autre pour le mouvement
-        //ferait en sorte que le joueur ne pourrait pas se déplacer et sauter en même temps.
-        BuildSurfaceMovement();
-        BuildVerticalMovement();
-
-        characterController.Move(direction);
     }
 
     private void BuildSurfaceMovement()
