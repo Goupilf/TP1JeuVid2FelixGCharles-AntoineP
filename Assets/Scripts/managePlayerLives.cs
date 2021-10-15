@@ -40,7 +40,8 @@ public class ManagePlayerLives : MonoBehaviour
         if(collision.gameObject.tag == "alien" && isInvincible == false)
         {
             collision.gameObject.GetComponent<AudioSource>().Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y)
             {
                 nbOfLives = nbOfLives - 1;
