@@ -7,16 +7,14 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private int nbOfLives = 5;
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
-    private AudioSource audioSource1; //Son de blessure
-    private AudioSource audioSource2; //Son de mort
+    private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource1 = GetComponents<AudioSource>()[0];
-        audioSource2 = GetComponents<AudioSource>()[1];
+        audioSource = GetComponent<AudioSource>();
         gameManager.modifyLifeCounter(nbOfLives);
     }
 
@@ -46,12 +44,11 @@ public class ManagePlayerLives : MonoBehaviour
                 nbOfLives = nbOfLives - 1;
                 isInvincible = true;
                 Debug.Log("Invincible ON");
-                audioSource1.Play();
+                audioSource.Play();
                 gameManager.modifyLifeCounter(nbOfLives);
             }
             if(nbOfLives <= 0)
             {
-                audioSource2.Play();
                 gameObject.SetActive(false);
             }
         }
