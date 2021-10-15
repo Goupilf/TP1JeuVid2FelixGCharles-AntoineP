@@ -23,6 +23,10 @@ public class ManagePlayerLives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!gameObject.activeSelf)
+        {
+
+        }
         if(isInvincible && invincibleTime <= 0)
         {
             isInvincible = false;
@@ -40,7 +44,7 @@ public class ManagePlayerLives : MonoBehaviour
         if(collision.gameObject.tag == "alien" && isInvincible == false)
         {
             collision.gameObject.GetComponent<AudioSource>().Play();
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y)
             {
                 nbOfLives = nbOfLives - 1;
@@ -52,7 +56,7 @@ public class ManagePlayerLives : MonoBehaviour
             if(nbOfLives <= 0)
             {
                 audioSource2.Play();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
