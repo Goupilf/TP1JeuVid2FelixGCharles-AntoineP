@@ -23,10 +23,6 @@ public class ManagePlayerLives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!gameObject.activeSelf)
-        {
-
-        }
         if(isInvincible && invincibleTime <= 0)
         {
             isInvincible = false;
