@@ -15,4 +15,13 @@ public class CollectIcon : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "icon")
+        {
+            collision.gameObject.SetActive(false);
+            //collision.gameObject.GetComponent<>();
+        }
+    }
 }
