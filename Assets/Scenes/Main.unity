@@ -546,7 +546,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c913da143d1341c4a8ca22e0717e79a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 390d1e401d456db4e8923d60a357e309, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1458,7 +1458,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959273151}
-  m_LocalRotation: {x: 0.06089592, y: 0.784464, z: -0.078027934, w: 0.6122252}
+  m_LocalRotation: {x: 0.06089593, y: 0.78446406, z: -0.07802796, w: 0.6122251}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503e81fc717ade645a41393c1793397d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbOfLives: 1
+  nbOfLives: 5
   characterController: {fileID: 1032903425}
   gameManager: {fileID: 1286387269}
 --- !u!82 &1032903428
