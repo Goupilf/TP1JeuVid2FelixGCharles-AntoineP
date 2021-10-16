@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectIcon : MonoBehaviour
 {
+    [SerializeField] GameObject collectSoundObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,9 @@ public class CollectIcon : MonoBehaviour
     {
         if (collision.gameObject.tag == "icon")
         {
+            collectSoundObject.transform.position = collision.gameObject.transform.position;
+            collectSoundObject.GetComponent<AudioSource>().Play();
             collision.gameObject.SetActive(false);
-            //collision.gameObject.GetComponent<>();
         }
     }
 }

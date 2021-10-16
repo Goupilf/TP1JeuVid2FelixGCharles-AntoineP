@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ManagePlayerLives : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject deathSoundObject;
+    [SerializeField]
+    private UnityEvent telekinesis;
     private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
@@ -40,6 +43,7 @@ public class ManagePlayerLives : MonoBehaviour
         {
             collision.gameObject.GetComponent<AudioSource>().Play();
             collision.gameObject.SetActive(false);
+            telekinesis.Invoke();
             if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y)
             {
                 nbOfLives = nbOfLives - 1;
