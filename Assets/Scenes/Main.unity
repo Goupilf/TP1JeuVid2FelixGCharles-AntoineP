@@ -2594,6 +2594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiLivesTexts: {fileID: 186560008}
+  uiRocketTexts: {fileID: 235477933}
+  uiMultiTexts: {fileID: 1080573562}
 --- !u!4 &1286387270
 Transform:
   m_ObjectHideFlags: 0
