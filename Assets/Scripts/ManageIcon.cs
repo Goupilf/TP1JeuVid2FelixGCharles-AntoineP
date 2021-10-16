@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ManageIcon : MonoBehaviour
 {
-    private float speed = 50.0f;
+    private float speed = 75.0f;
     // Start is called before the first frame update
     void Start()
     {

@@ -17,13 +17,13 @@ public class CollectIcon : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "icon")
+        if (other.gameObject.tag == "icon")
         {
-            collectSoundObject.transform.position = collision.gameObject.transform.position;
+            collectSoundObject.transform.position = other.gameObject.transform.position;
             collectSoundObject.GetComponent<AudioSource>().Play();
-            collision.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 }
