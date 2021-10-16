@@ -41,7 +41,8 @@ public class AlienSpawnerManager : MonoBehaviour
         {
             SpawnObjectToRecycle();
             period = 0;
-        }        period += UnityEngine.Time.deltaTime;
+        }
+        period += UnityEngine.Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -58,7 +59,8 @@ public class AlienSpawnerManager : MonoBehaviour
 
                 return;
             }
-    }    private void CountActive()
+    }
+    private void CountActive()
     {
         int numActiveObj = 0;
         for (int i = 0; i < objectsToRecyle.Length; i++)
@@ -70,5 +72,6 @@ public class AlienSpawnerManager : MonoBehaviour
         }
         this.numActiveAlien = numActiveObj;
         
-    }
+    }
+
 }

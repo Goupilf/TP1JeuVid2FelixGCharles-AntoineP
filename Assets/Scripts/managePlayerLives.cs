@@ -7,6 +7,7 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private int nbOfLives = 5;
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject deathSoundObject;
     private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
@@ -49,6 +50,8 @@ public class ManagePlayerLives : MonoBehaviour
             }
             if(nbOfLives <= 0)
             {
+                deathSoundObject.transform.position = gameObject.transform.position;
+                deathSoundObject.GetComponent<AudioSource>().Play();
                 gameObject.SetActive(false);
             }
         }
