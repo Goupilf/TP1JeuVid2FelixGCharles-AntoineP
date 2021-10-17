@@ -44,11 +44,11 @@ public class CollectibleSpawnerManager : MonoBehaviour
         int randNumber = Random.Range(1, 100);
         if (randNumber < numberOfLuck)
         {
-            for(int i = 0; i < maxItemsInGame; i++)
+            for (int i = 0; i < maxItemsInGame; i++)
             {
                 if (!objectsToRecyle[i].activeSelf)
                 {
-                    objectsToRecyle[i].transform.position = position;
+                    objectsToRecyle[i].transform.position = new Vector3(position.x, position.y + 2, position.z);
                     objectsToRecyle[i].SetActive(true);
                     objectsToRecyle[i].GetComponent<AudioSource>().Play();
                     break;
