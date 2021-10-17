@@ -19,10 +19,24 @@ public class CollectIcon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Soit Heal, Rocket ou Multi
         if (other.gameObject.tag == "icon")
         {
             collectSoundObject.transform.position = other.gameObject.transform.position;
             collectSoundObject.GetComponent<AudioSource>().Play();
+            if(other.gameObject.GetComponent<ManageIcon>().getTypeOfItem() == "Heal")
+            {
+                gameObject.GetComponent<ManagePlayerLives>();
+            }
+            else if(other.gameObject.GetComponent<ManageIcon>().getTypeOfItem() == "Multi")
+            {
+
+            }
+
+            else if (other.gameObject.GetComponent<ManageIcon>().getTypeOfItem() == "Rocket")
+            {
+
+            }
             other.gameObject.SetActive(false);
         }
     }

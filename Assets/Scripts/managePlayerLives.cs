@@ -59,4 +59,10 @@ public class ManagePlayerLives : MonoBehaviour
             }
         }
     }
+
+    public void increaseLifeBar()
+    {
+        nbOfLives += 1;
+        gameManager.modifyLifeCounter(nbOfLives);
+    }
 }

@@ -8,7 +8,7 @@ public class CollectibleSpawnerManager : MonoBehaviour
     [SerializeField] GameObject healToRecycle;
     [SerializeField] GameObject multiToRecycle;
     private int maxItemsInGame = 15;
-    [SerializeField] int numberOfLuck = 0;
+    [SerializeField] int numberOfLuck;
 
     private GameObject[] objectsToRecyle = new GameObject[15];
     // Start is called before the first frame update
@@ -17,7 +17,6 @@ public class CollectibleSpawnerManager : MonoBehaviour
         for (int i = 0; i < maxItemsInGame; i++)
         {
             int chooseObject = Random.Range(1, 4);
-            Debug.Log(chooseObject);
             if(chooseObject == 1)
             {
                 objectsToRecyle[i] = Instantiate(healToRecycle, new Vector3(this.transform.position.x, this.transform.position.y - 5, this.transform.position.z), Quaternion.identity);
