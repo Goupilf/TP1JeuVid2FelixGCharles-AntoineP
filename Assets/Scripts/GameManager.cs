@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private int lives = 5;
+    private int multiTimer = 0;
+    private int rocketAmmo = 0;
     [SerializeField] Text uiLivesTexts;
+    [SerializeField] Text uiRocketTexts;
+    [SerializeField] Text uiMultiTexts;
     // Start is called before the first frame update
     void Start()
     {
-        uiLivesTexts.text = lives.ToString();    
+        uiLivesTexts.text = lives.ToString();
+        uiRocketTexts.text = rocketAmmo.ToString();
+        uiMultiTexts.text = multiTimer.ToString();
     }
 
     // Update is called once per frame
@@ -27,5 +33,17 @@ public class GameManager : MonoBehaviour
     {
         lives = nbOfLivesRemaining;
         uiLivesTexts.text = lives.ToString();
+    }
+
+    public void modifyMultiTimer(int nbOTimeRemaining)
+    {
+        multiTimer = nbOTimeRemaining;
+        uiMultiTexts.text = multiTimer.ToString();
+    }
+
+    public void modifyRocketCounter(int nbOfAmmoRemaining)
+    {
+        rocketAmmo = nbOfAmmoRemaining;
+        uiRocketTexts.text = rocketAmmo.ToString();
     }
 }
