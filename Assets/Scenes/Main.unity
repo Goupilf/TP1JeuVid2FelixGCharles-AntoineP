@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497625028}
-  m_LocalRotation: {x: 0.08309479, y: 0.7811119, z: -0.10647207, w: 0.609609}
+  m_LocalRotation: {x: 0.0830948, y: 0.7811119, z: -0.10647204, w: 0.60960907}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2036,7 +2036,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959273151}
-  m_LocalRotation: {x: 0.06089593, y: 0.78446406, z: -0.07802796, w: 0.6122251}
+  m_LocalRotation: {x: 0.060895935, y: 0.784464, z: -0.07802794, w: 0.6122251}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3748,6 +3748,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812778402}
   m_CullTransparentMesh: 1
+--- !u!1 &1860418001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860418003}
+  - component: {fileID: 1860418002}
+  m_Layer: 0
+  m_Name: CollectibleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1860418002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860418001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128ecd85ea8ee5d4d836bb7a4a3fa4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketToRecycle: {fileID: 6315552685179502929, guid: bff9c68042b0b9148ae5349f91065aa0,
+    type: 3}
+  healToRecycle: {fileID: 7682405027818894154, guid: d57a65484e20ee742a9aab2a7ea23801,
+    type: 3}
+  multiToRecycle: {fileID: 2353596665029321741, guid: 403315b05cfedf24a99b939eebe06abf,
+    type: 3}
+  numberOfLuck: 25
+--- !u!4 &1860418003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860418001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.121673584, y: 9.700001, z: 1.4501572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1865030374
 PrefabInstance:
   m_ObjectHideFlags: 0

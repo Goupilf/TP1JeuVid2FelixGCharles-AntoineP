@@ -9,8 +9,7 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject deathSoundObject;
-    [SerializeField]
-    private UnityEvent telekinesis;
+    [SerializeField] private UnityEvent telekinesis;
     private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
