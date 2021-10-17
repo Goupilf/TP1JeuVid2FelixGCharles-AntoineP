@@ -191,6 +191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienSpawner (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
 --- !u!4 &128201415 stripped
@@ -605,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.07199258, y: 0.7829194, z: -0.092246406, w: 0.6110196}
-  m_LocalPosition: {x: -32.97745, y: 17.42, z: 8.695992}
+  m_LocalPosition: {x: -50.43818, y: 22.42, z: 13.068989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -780,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 10, z: -36}
+  m_FollowOffset: {x: 0, y: 15, z: -54}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -833,6 +838,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &384351701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384351703}
+  - component: {fileID: 384351702}
+  m_Layer: 0
+  m_Name: ShootingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &384351702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384351701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a044106f0da714c9d76c8314729f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToRecycle: {fileID: 614301143031348174, guid: 6a18e56bba5724c499284d2e7c6192a2,
+    type: 3}
+  playerShooting: {fileID: 1032903422}
+  camera: {fileID: 282840814}
+  direction: {x: 0, y: 0, z: 0}
+--- !u!4 &384351703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384351701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.121673584, y: 38.32126, z: 1.4501572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397944616
 GameObject:
   m_ObjectHideFlags: 3
@@ -906,7 +959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 10, z: -36}
+  m_FollowOffset: {x: 0, y: 15, z: -54}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1092,6 +1145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienSpawner (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
 --- !u!4 &438012699 stripped
@@ -1166,7 +1224,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497625028}
-  m_LocalRotation: {x: 0.0830948, y: 0.7811119, z: -0.10647204, w: 0.60960907}
+  m_LocalRotation: {x: 0.08309479, y: 0.7811119, z: -0.10647204, w: 0.60960907}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1247,7 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 10, z: -36}
+  m_FollowOffset: {x: 0, y: 15, z: -54}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1430,6 +1488,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
 --- !u!4 &659952975 stripped
@@ -1504,6 +1567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -1594,7 +1662,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &914615005
 AudioSource:
@@ -1758,7 +1826,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959273151}
-  m_LocalRotation: {x: 0.060895935, y: 0.784464, z: -0.07802794, w: 0.6122251}
+  m_LocalRotation: {x: 0.060895916, y: 0.784464, z: -0.07802793, w: 0.6122252}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2191,6 +2259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienSpawner (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
 --- !u!4 &1176334426 stripped
@@ -2265,6 +2338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -2384,6 +2462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -2522,6 +2605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -3077,12 +3165,12 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 28
-    m_Radius: 24
-  - m_Height: 10
+  - m_Height: 42
     m_Radius: 36
-  - m_Height: 3
-    m_Radius: 24
+  - m_Height: 15
+    m_Radius: 54
+  - m_Height: 4.5
+    m_Radius: 36
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 497625029}
@@ -3096,7 +3184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695988469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.97745, y: 17.42, z: 8.695992}
+  m_LocalPosition: {x: -50.43818, y: 22.42, z: 13.068989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497625030}
@@ -3171,6 +3259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -3293,6 +3386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AlienSpawner (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539650518895919532, guid: ea8bcb7f483dd374bac76705e361369a,
+        type: 3}
+      propertyPath: m_TagString
+      value: alienspawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8bcb7f483dd374bac76705e361369a, type: 3}
@@ -3470,6 +3568,7 @@ PrefabInstance:
     - {fileID: 8320034494636975951, guid: e5bafbba3a71297409e8f8d6cc789c8b, type: 3}
     - {fileID: 3202535314028260157, guid: e5bafbba3a71297409e8f8d6cc789c8b, type: 3}
     - {fileID: 914615002, guid: e5bafbba3a71297409e8f8d6cc789c8b, type: 3}
+    - {fileID: 2168170143246704436, guid: e5bafbba3a71297409e8f8d6cc789c8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e5bafbba3a71297409e8f8d6cc789c8b, type: 3}
 --- !u!1001 &2096234257
 PrefabInstance:

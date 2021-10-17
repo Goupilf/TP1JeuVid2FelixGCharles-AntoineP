@@ -7,11 +7,13 @@ TagManager:
   - alien
   - icon
   - death
+  - alienspawner
+  - bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bullet
   - Water
   - UI
   - 
