@@ -26,7 +26,7 @@ public class CollectIcon : MonoBehaviour
             collectSoundObject.GetComponent<AudioSource>().Play();
             if(other.gameObject.GetComponent<ManageIcon>().getTypeOfItem() == "Heal")
             {
-                gameObject.GetComponent<ManagePlayerLives>();
+                gameObject.GetComponent<ManagePlayerLives>().increaseLifeBar();
             }
             else if(other.gameObject.GetComponent<ManageIcon>().getTypeOfItem() == "Multi")
             {
