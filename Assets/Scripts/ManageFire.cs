@@ -9,13 +9,13 @@ public class ManageFire : MonoBehaviour
     [SerializeField] GameObject playerShooting;
     [SerializeField] private Transform camera;
 
-    private GameObject[] objectsToRecyle = new GameObject[25];
+    private GameObject[] objectsToRecyle = new GameObject[50];
     private float period = 0.0f;
-    private int nbBulletInstances = 25;
+    private int nbBulletInstances = 50;
     private float timeBetweenSpawnsInSec = 0.1f;
     private int numActiveBullet = 0;
     private float bulletSpeed = 10000f;
-
+    [SerializeField] GameObject gunEnd;
     // Start is called before the first frame update
 
     void Start()
@@ -24,7 +24,8 @@ public class ManageFire : MonoBehaviour
         for (int i = 0; i < nbBulletInstances; i++)
         {
             objectsToRecyle[i] = Instantiate(objectToRecycle, new Vector3(0, 0, 0), Quaternion.identity);
-            objectsToRecyle[i].SetActive(false);
+            objectsToRecyle[i].SetActive(true);
+            objectsToRecyle[i].transform.GetChild(0).gameObject.SetActive(false);
         }
 
     }
@@ -49,10 +50,10 @@ public class ManageFire : MonoBehaviour
     private void SpawnObjectToRecycle()
     {
         for (int i = 0; i < nbBulletInstances; i++)
-            if (!objectsToRecyle[i].activeSelf)
+            if (!objectsToRecyle[i].transform.GetChild(0).gameObject.activeSelf)
             {
-                objectsToRecyle[i].SetActive(true);
-                objectsToRecyle[i].transform.position = new Vector3(playerShooting.transform.position.x, playerShooting.transform.position.y + 2, playerShooting.transform.position.z);
+                objectsToRecyle[i].transform.GetChild(0).gameObject.SetActive(true);
+                objectsToRecyle[i].transform.position = new Vector3(gunEnd.transform.position.x, gunEnd.transform.position.y, gunEnd.transform.position.z);
                 // transposer le bullet vers le bout du canon et lui donné une vitesse et un angle
                 // reste a acceder l'enfant du player pour trouvé le bout du canon
                 // objectsToRecyle[i].transform.rotation = playerShooting.transform.rotation;
@@ -67,7 +68,7 @@ public class ManageFire : MonoBehaviour
         int numActiveObj = 0;
         for (int i = 0; i < objectsToRecyle.Length; i++)
         {
-            if (objectsToRecyle[i].activeSelf == true)
+            if (objectsToRecyle[i].transform.GetChild(0).gameObject.activeSelf == true)
             {
                 numActiveObj++;
             }

@@ -12,7 +12,7 @@ public class AlienSpawnerManager : MonoBehaviour
 
     private float period = 0.0f;
     private GameObject[] objectsToRecyle = new GameObject[20];
-    private GameObject[] alienSpawners = new GameObject[10];
+    private List<GameObject> alienSpawners = new List<GameObject>();
     
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,9 @@ public class AlienSpawnerManager : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            alienSpawners[i] = this.transform.GetChild(i).gameObject;
+            alienSpawners.Insert(i, this.transform.GetChild(i).gameObject);
+            
+
         }
         // Instantiate(prefab, new Vector3(this.transform.position.x, this.transform.position.y-5, this.transform.position.z), Quaternion.identity);
         
@@ -37,6 +39,15 @@ public class AlienSpawnerManager : MonoBehaviour
     void Update()
     {
         CountActive();
+
+        for (int i = 0; i < alienSpawners.Count; i++)
+        {
+            if (alienSpawners[i].activeSelf == false)
+            {
+                alienSpawners.RemoveAt(i);
+            }
+        }
+
         if (period > timeBetweenSpawnsInSec && numActiveAlien < maxAlienInGame)
         {
             SpawnObjectToRecycle();
@@ -54,7 +65,7 @@ public class AlienSpawnerManager : MonoBehaviour
             if (!objectsToRecyle[i].activeSelf)
             {
                 objectsToRecyle[i].SetActive(true);
-                GameObject randalienspawner = alienSpawners[Random.Range(0, alienSpawners.Length)];
+                GameObject randalienspawner = alienSpawners[Random.Range(0, alienSpawners.Count)];
                 if (randalienspawner.activeSelf == true)
                 {
                     objectsToRecyle[i].transform.position = new Vector3(randalienspawner.transform.position.x, randalienspawner.transform.position.y - 5, randalienspawner.transform.position.z);

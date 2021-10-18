@@ -5,7 +5,8 @@ using UnityEngine;
 public class BulletCollision : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameManager gameManager;
+    private float period = 0.0f;
+    private float timeroffset = 5f;
     void Start()
     {
         
@@ -14,21 +15,17 @@ public class BulletCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       //if (period > timeroffset)
+        //{
+        //    this.gameObject.SetActive(false);
+        //    period = 0;
+       // }
+        // period += UnityEngine.Time.deltaTime;
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "alien")
-        {
-           
-            // fait perdre vie alien
-            // faire en sorte que si pdv alien == 0 il soit desactiver
-        }
-        else if (other.gameObject.tag == "spawner")
-        {
-            // fait perdre vie spawner
-            // faire en sorte que si pdv spawner == 0 il soit desactiver
-        }
-        // desactive la balle pou quelle soit reutilliser
+       Debug.Log("test collision 2");
+       this.gameObject.SetActive(false);
     }
 }
