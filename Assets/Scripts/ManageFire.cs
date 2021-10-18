@@ -36,6 +36,7 @@ public class ManageFire : MonoBehaviour
         CountActive();
         if (Input.GetButtonDown("Fire1"))
         {
+            
             if (period > timeBetweenSpawnsInSec && numActiveBullet < nbBulletInstances)
             {
                 SpawnObjectToRecycle();
@@ -53,10 +54,11 @@ public class ManageFire : MonoBehaviour
             {
                 objectsToRecyle[i].transform.GetChild(0).gameObject.SetActive(true);
                 objectsToRecyle[i].transform.position = new Vector3(gunEnd.transform.position.x, gunEnd.transform.position.y, gunEnd.transform.position.z);
+                objectsToRecyle[i].transform.GetChild(0).gameObject.transform.position = new Vector3(gunEnd.transform.position.x, gunEnd.transform.position.y, gunEnd.transform.position.z);
                 // transposer le bullet vers le bout du canon et lui donné une vitesse et un angle
                 // reste a acceder l'enfant du player pour trouvé le bout du canon
                 // objectsToRecyle[i].transform.rotation = playerShooting.transform.rotation;
-                
+                objectsToRecyle[i].GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
                 objectsToRecyle[i].GetComponentInChildren<Rigidbody>().AddForce(playerShooting.transform.forward * bulletSpeed);
                 // reste a faire que la balle se dirige dans le meme sense que le player;
                 return;
