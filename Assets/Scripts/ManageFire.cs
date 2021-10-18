@@ -35,7 +35,6 @@ public class ManageFire : MonoBehaviour
         CountActive();
         if (Input.GetButtonDown("Fire1"))
         {
-            
             if (period > timeBetweenSpawnsInSec && numActiveBullet < nbBulletInstances)
             {
                 SpawnObjectToRecycle();
