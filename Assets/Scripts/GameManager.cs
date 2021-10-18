@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text uiLivesTexts;
     [SerializeField] Text uiRocketTexts;
     [SerializeField] Text uiMultiTexts;
+    [SerializeField] Text uiOutcomeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +46,15 @@ public class GameManager : MonoBehaviour
     {
         rocketAmmo = nbOfAmmoRemaining;
         uiRocketTexts.text = rocketAmmo.ToString();
+    }
+
+    public void setVictoryText()
+    {
+        uiOutcomeText.text = "Vous avez gagnez";
+    }
+
+    public void setLossText()
+    {
+        uiOutcomeText.text = "Vous avez perdu";
     }
 }
