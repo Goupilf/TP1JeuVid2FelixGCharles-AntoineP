@@ -60,6 +60,7 @@ public class ManageFire : MonoBehaviour
                 // objectsToRecyle[i].transform.rotation = playerShooting.transform.rotation;
                 objectsToRecyle[i].GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
                 objectsToRecyle[i].GetComponentInChildren<Rigidbody>().AddForce(playerShooting.transform.forward * bulletSpeed);
+                objectsToRecyle[i].GetComponent<AudioSource>().Play();
                 // reste a faire que la balle se dirige dans le meme sense que le player;
                 return;
             }

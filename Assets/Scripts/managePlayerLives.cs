@@ -10,6 +10,7 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject deathSoundObject;
     [SerializeField] GameObject itemSpawner;
+    private Camera camera;
     private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
@@ -17,6 +18,7 @@ public class ManagePlayerLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camera = (Camera)FindObjectOfType(typeof(Camera));
         audioSource = GetComponent<AudioSource>();
         gameManager.modifyLifeCounter(nbOfLives);
     }
@@ -56,6 +58,8 @@ public class ManagePlayerLives : MonoBehaviour
             {
                 deathSoundObject.transform.position = gameObject.transform.position;
                 deathSoundObject.GetComponent<AudioSource>().Play();
+                camera.GetComponent<AudioSource>().Stop();
+                gameManager.setLossText();
                 gameObject.SetActive(false);
             }
             itemSpawner.GetComponent<CollectibleSpawnerManager>().SpawnItemInGame(collision.gameObject.transform.position);
