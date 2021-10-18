@@ -1947,8 +1947,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.2628803, y: 4.3366003, z: 4.753193}
+  m_Center: {x: 0.11345053, y: 1.4182992, z: -1.1343517}
 --- !u!82 &914615005
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1969,7 +1969,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.9832878
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -4432,7 +4432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2102962198}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DeathAlienSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
