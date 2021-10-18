@@ -1207,6 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  itemSpawner: {fileID: 0}
 --- !u!1 &1344034646348482
 GameObject:
   m_ObjectHideFlags: 0

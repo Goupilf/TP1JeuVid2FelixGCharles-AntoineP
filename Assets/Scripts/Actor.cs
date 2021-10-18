@@ -27,7 +27,7 @@ public class Actor : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test collision");
+        Debug.Log("test collision tir sur alien");
         if (other.gameObject.tag == "bullet")
         {
             lifepoints = lifepoints - 1;

@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test collision");
+        Debug.Log("test collision spawn");
         if (other.gameObject.tag == "bullet")
         {
             spawnerLifePoints = spawnerLifePoints - 1;

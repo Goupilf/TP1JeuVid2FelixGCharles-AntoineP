@@ -7,8 +7,9 @@ public class AlienSpawnerManager : MonoBehaviour
 
     [SerializeField] GameObject objectToRecycle;
     [SerializeField] private float timeBetweenSpawnsInSec;
-    [SerializeField] private int maxAlienInGame =20;
+    [SerializeField] private int maxAlienInGame = 20;
     [SerializeField] private int numActiveAlien = 0;
+    [SerializeField] GameManager gameManager;
 
     private float period = 0.0f;
     private GameObject[] objectsToRecyle = new GameObject[20];
@@ -39,20 +40,31 @@ public class AlienSpawnerManager : MonoBehaviour
     void Update()
     {
         CountActive();
-
-        for (int i = 0; i < alienSpawners.Count; i++)
+        if (alienSpawners.Count == 0)
         {
-            if (alienSpawners[i].activeSelf == false)
+            gameManager.setVictoryText();
+            for (int i = 0; i < objectsToRecyle.Length; i++)
             {
-                alienSpawners.RemoveAt(i);
+                objectsToRecyle[i].SetActive(false);
             }
         }
-
-        if (period > timeBetweenSpawnsInSec && numActiveAlien < maxAlienInGame)
+        else
         {
-            SpawnObjectToRecycle();
-            period = 0;
+            for (int i = 0; i < alienSpawners.Count; i++)
+            {
+                if (alienSpawners[i].activeSelf == false)
+                {
+                    alienSpawners.RemoveAt(i);
+                }
+            }
+
+            if (period > timeBetweenSpawnsInSec && numActiveAlien < maxAlienInGame)
+            {
+                SpawnObjectToRecycle();
+                period = 0;
+            }
         }
+        
         period += UnityEngine.Time.deltaTime;
     }
     private void FixedUpdate()
