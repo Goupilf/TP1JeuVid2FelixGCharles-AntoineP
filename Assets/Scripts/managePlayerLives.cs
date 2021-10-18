@@ -9,6 +9,7 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject deathSoundObject;
+    [SerializeField] GameObject alienDeathSoundObject;
     [SerializeField] GameObject itemSpawner;
     private Camera camera;
     private AudioSource audioSource; //Son de blessure
@@ -45,7 +46,9 @@ public class ManagePlayerLives : MonoBehaviour
     {
         if(collision.gameObject.tag == "alien" && isInvincible == false)
         {
-            collision.gameObject.GetComponent<AudioSource>().Play();
+            alienDeathSoundObject.transform.position = collision.gameObject.transform.position;
+            alienDeathSoundObject.GetComponent<AudioSource>().Play();
+            collision.gameObject.GetComponent<Actor>();
             if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y + 1)
             {
                 nbOfLives = nbOfLives - 1;
