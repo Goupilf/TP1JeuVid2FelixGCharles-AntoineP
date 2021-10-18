@@ -9,6 +9,7 @@ public class Actor : MonoBehaviour
     [SerializeField] GameObject goal;
     private NavMeshAgent navMeshAgent;
     private int lifepoints = 2;
+    [SerializeField] GameObject itemSpawner;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class Actor : MonoBehaviour
             lifepoints = lifepoints - 1;
             if (lifepoints == 0)
             {
+                itemSpawner.GetComponent<CollectibleSpawnerManager>().SpawnItemInGame(this.gameObject.transform.position);
+                this.gameObject.GetComponent<AudioSource>().Play();
                 this.gameObject.SetActive(false);
             }
             other.gameObject.SetActive(false);

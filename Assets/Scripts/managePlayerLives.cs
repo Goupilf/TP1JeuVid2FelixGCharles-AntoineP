@@ -9,7 +9,7 @@ public class ManagePlayerLives : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject deathSoundObject;
-    [SerializeField] private UnityEvent telekinesis;
+    [SerializeField] GameObject itemSpawner;
     private AudioSource audioSource; //Son de blessure
     private bool isInvincible = false;
     private int invincibleTime = 30;
@@ -24,15 +24,18 @@ public class ManagePlayerLives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isInvincible && invincibleTime <= 0)
+        if (isInvincible)
         {
-            isInvincible = false;
-            invincibleTime = 30;
-            Debug.Log("Invincible OFF");
-        }
-        else
-        {
-            invincibleTime -= 1;
+            if (invincibleTime <= 0)
+            {
+                isInvincible = false;
+                invincibleTime = 30;
+                Debug.Log("Invincible OFF");
+            }
+            else
+            {
+                invincibleTime -= 1;
+            }
         }
     }
 
@@ -41,9 +44,7 @@ public class ManagePlayerLives : MonoBehaviour
         if(collision.gameObject.tag == "alien" && isInvincible == false)
         {
             collision.gameObject.GetComponent<AudioSource>().Play();
-            collision.gameObject.SetActive(false);
-            telekinesis.Invoke();
-            if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y)
+            if (characterController.isGrounded || gameObject.transform.position.y <= collision.gameObject.transform.position.y + 1)
             {
                 nbOfLives = nbOfLives - 1;
                 isInvincible = true;
@@ -57,6 +58,8 @@ public class ManagePlayerLives : MonoBehaviour
                 deathSoundObject.GetComponent<AudioSource>().Play();
                 gameObject.SetActive(false);
             }
+            itemSpawner.GetComponent<CollectibleSpawnerManager>().SpawnItemInGame(collision.gameObject.transform.position);
+            collision.gameObject.SetActive(false);
         }
     }
 
