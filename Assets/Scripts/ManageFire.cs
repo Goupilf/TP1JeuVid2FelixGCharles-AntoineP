@@ -34,7 +34,7 @@ public class ManageFire : MonoBehaviour
     void Update()
     {
         CountActive();
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1") > 0.9)
         {
             
             if (period > timeBetweenSpawnsInSec && numActiveBullet < nbBulletInstances)
